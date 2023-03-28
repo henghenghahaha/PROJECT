@@ -457,3 +457,4 @@ dict = [{'prop': '', 'value': '', 'key': '', 'Academic_Year': '2018    Fall Seme
          'statement': 'This is a statement listing courses completed online or by distance study and courses completed by regular classroom attendance'}]
 
 new = 1
+new = 2
