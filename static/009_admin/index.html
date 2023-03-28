@@ -1,0 +1,431 @@
+<html>
+<head>
+    <link href='../../static/index9/styles.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <link rel="stylesheet" href="https://form.making.link/public/lib/form-making-v3/dist/index.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body style="margin:0px;">
+<div style="width: 1280px; height: 100%; position:relative; margin:auto;">
+    <div class='sk-ab sk-006_'>
+        <div class='sk-asset sk-Header-3C17F3EF-DD66-438F-B148-18FE4656AFEF'>
+            <div class='sk-asset sk-Header-7477DED8-0B9C-4B5C-93C6-091D333C98D2'>
+                <div class='sk-asset sk-Container-793BF033-1456-4A28-BAF7-26CC7DCF7E4A'></div>
+                <div class='sk-asset sk-DANWOOD-UNIVERSITY-C-E00818CA-B2B6-44F2-8252-1DF28DD11E36'><span class="span1">DANWOOD<br>UNIVERSITY <br>CHICAGO</span>
+                </div>
+            </div>
+        </div>
+        <div class='sk-asset sk-Left-ED8BB773-E9C0-49CE-9231-951F9D2E6960'>
+            <div class='sk-asset sk-Navigation-2C8AEF6C-66B4-46F1-8D80-28F682B9DE68'>
+                <div class='sk-asset sk-HOME' onclick="onTopClick_HOME()"><span class="span1">HOME</span></div>
+                <div class='sk-asset sk-CAMPUS-LIFE-B7CE44C6-D1C9-4E5D-9A20-B8784B6A5AF7' onclick="onTopClick_CAMPUS()">
+                    <span class="span1">CAMPUS LIFE</span></div>
+                <div class='sk-asset sk-DEGREE-INQUIRY-8B7D6554-7A6A-4AC5-8AC6-456E17801CE4'
+                     onclick="onTopClick_DEGREE()"><span class="span1">DEGREE INQUIRY</span></div>
+                <div class='sk-asset sk-RESEARCH-2197645B-FE65-4181-B18C-E19BA4FB2274' onclick="onTopClick_RESEARCH()">
+                    <span class="span1">RESEARCH</span></div>
+                <div class='sk-asset sk-ABOUT-DUC-478FEE2A-00E3-409D-B928-C1E210ECFFBF'
+                     onclick="onTopClick_ABOUT_DUC()"><span class="span1">ABOUT DUC</span></div>
+                <div class='sk-asset sk-ASMISSION-1CB58559-7198-4FED-805C-6F4BF70FBE38'
+                     onclick="onTopClick_ASMISSION()"><span class="span1">ASMISSION</span></div>
+            </div>
+        </div>
+        <div class='sk-asset sk-20230211-FC9A7787-1EA4-45F2-B412-0DA27B05F32D'></div>
+    </div>
+    <div id="app">
+        <fm-generate-form
+                :data="jsonData"
+                :remote="remoteFuncs"
+                :remote-option="dynamicData"
+                ref="generateForm"
+        >
+        </fm-generate-form>
+        <el-button type="primary" @click="handleSubmit()">提交</el-button>
+    </div>
+    <script src="https://unpkg.com/vue@next/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/element-plus"></script>
+    <script src="https://form.making.link/public/lib/form-making-v3/dist/form-making-v3.umd.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    jsonData: {
+                        "list": [{
+                            "type": "text",
+                            "icon": "icon-wenzishezhi-",
+                            "options": {
+                                "defaultValue": "Identity Information",
+                                "customClass": "",
+                                "remoteFunc": "func_1677167324000_91091"
+                            },
+                            "name": "",
+                            "key": "1677167324000_91091",
+                            "model": "text_1677167324000_91091",
+                            "rules": []
+                        }, {
+                            "type": "imgupload",
+                            "icon": "icon-tupian",
+                            "options": {
+                                "defaultValue": [],
+                                "size": {"width": 100, "height": 100},
+                                "width": "",
+                                "tokenFunc": "funcGetToken",
+                                "token": "",
+                                "tokenType": "datasource",
+                                "domain": "https://tcdn.form.making.link/",
+                                "disabled": false,
+                                "readonly": false,
+                                "limit": 8,
+                                "multiple": false,
+                                "isQiniu": false,
+                                "isDelete": true,
+                                "min": 0,
+                                "isEdit": true,
+                                "action": "https://tools-server.making.link/api/transfer",
+                                "customClass": "",
+                                "labelWidth": 100,
+                                "isLabelWidth": false,
+                                "hidden": false,
+                                "dataBind": true,
+                                "headers": [],
+                                "required": false,
+                                "validatorCheck": false,
+                                "validator": "",
+                                "withCredentials": false,
+                                "remoteFunc": "func_fz4no1m9",
+                                "remoteOption": "option_fz4no1m9",
+                                "tableColumn": false,
+                                "subform": false
+                            },
+                            "events": {
+                                "onChange": "",
+                                "onSelect": "",
+                                "onUploadSuccess": "",
+                                "onUploadError": "",
+                                "onRemove": ""
+                            },
+                            "name": "SelfPic",
+                            "key": "fz4no1m9",
+                            "model": "imgupload_fz4no1m9",
+                            "rules": []
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677166414000_88351"
+                            },
+                            "name": "Name",
+                            "key": "1677166414000_88351",
+                            "model": "input_1677166414000_88351",
+                            "rules": [{"type": "string", "message": "Name格式不正确"}]
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677166419000_10181"
+                            },
+                            "name": "ID/PassportNo",
+                            "key": "1677166419000_10181",
+                            "model": "input_1677166419000_10181",
+                            "rules": [{"type": "string", "message": "ID/PassportNo格式不正确"}]
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677166424000_99105"
+                            },
+                            "name": "Gender",
+                            "key": "1677166424000_99105",
+                            "model": "input_1677166424000_99105",
+                            "rules": [{"type": "string", "message": "Gender格式不正确"}]
+                        }, {
+                            "type": "date",
+                            "icon": "icon-date",
+                            "options": {
+                                "defaultValue": "",
+                                "readonly": false,
+                                "disabled": false,
+                                "editable": true,
+                                "clearable": true,
+                                "placeholder": "",
+                                "startPlaceholder": "",
+                                "endPlaceholder": "",
+                                "type": "date",
+                                "format": "yyyy-MM-dd",
+                                "timestamp": false,
+                                "required": false,
+                                "width": "",
+                                "remoteFunc": "func_1677167144000_4999"
+                            },
+                            "name": "DataOfBirth",
+                            "key": "1677167144000_4999",
+                            "model": "date_1677167144000_4999",
+                            "rules": []
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677167083000_62011"
+                            },
+                            "name": "Nationality",
+                            "key": "1677167083000_62011",
+                            "model": "input_1677167083000_62011",
+                            "rules": [{"type": "string", "message": "Nationality格式不正确"}]
+                        }, {
+                            "type": "text",
+                            "icon": "icon-wenzishezhi-",
+                            "options": {
+                                "defaultValue": "Student's Registration Information",
+                                "customClass": "",
+                                "remoteFunc": "func_1677167469000_21798"
+                            },
+                            "name": "",
+                            "key": "1677167469000_21798",
+                            "model": "text_1677167469000_21798",
+                            "rules": []
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677167085000_63279"
+                            },
+                            "name": "Registration Number",
+                            "key": "1677167085000_63279",
+                            "model": "input_1677167085000_63279",
+                            "rules": [{"type": "string", "message": "Registration Number格式不正确"}]
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677167089000_64933"
+                            },
+                            "name": "Degree(s) Awarded",
+                            "key": "1677167089000_64933",
+                            "model": "input_1677167089000_64933",
+                            "rules": [{"type": "string", "message": "格式不正确"}]
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677167091000_59025"
+                            },
+                            "name": "Major(s)",
+                            "key": "1677167091000_59025",
+                            "model": "input_1677167091000_59025",
+                            "rules": [{"type": "string", "message": "Major(s)格式不正确"}]
+                        }, {
+                            "type": "input",
+                            "icon": "icon-input",
+                            "options": {
+                                "width": "100%",
+                                "defaultValue": "",
+                                "required": false,
+                                "dataType": "string",
+                                "pattern": "",
+                                "placeholder": "",
+                                "disabled": false,
+                                "maxlength": -1,
+                                "showWordLimit": false,
+                                "remoteFunc": "func_1677167095000_85527"
+                            },
+                            "name": "GPA",
+                            "key": "1677167095000_85527",
+                            "model": "input_1677167095000_85527",
+                            "rules": [{"type": "string", "message": "格式不正确"}]
+                        }, {
+                            "type": "date",
+                            "icon": "icon-date",
+                            "options": {
+                                "defaultValue": "",
+                                "readonly": false,
+                                "disabled": false,
+                                "editable": false,
+                                "clearable": true,
+                                "placeholder": "",
+                                "startPlaceholder": "",
+                                "endPlaceholder": "",
+                                "type": "date",
+                                "format": "YYYY-MM-DD",
+                                "timestamp": false,
+                                "required": false,
+                                "requiredMessage": "",
+                                "validatorCheck": false,
+                                "validator": "",
+                                "width": "",
+                                "customClass": "",
+                                "labelWidth": 100,
+                                "isLabelWidth": false,
+                                "hidden": false,
+                                "dataBind": true,
+                                "customProps": {},
+                                "remoteFunc": "func_wxl0nohh",
+                                "remoteOption": "option_wxl0nohh",
+                                "tableColumn": false,
+                                "subform": false
+                            },
+                            "events": {"onChange": "", "onFocus": "", "onBlur": ""},
+                            "name": "DataOfAttendence",
+                            "key": "wxl0nohh",
+                            "model": "date_wxl0nohh",
+                            "rules": []
+                        }, {
+                            "type": "date",
+                            "icon": "icon-date",
+                            "options": {
+                                "defaultValue": "",
+                                "readonly": false,
+                                "disabled": false,
+                                "editable": false,
+                                "clearable": true,
+                                "placeholder": "",
+                                "startPlaceholder": "",
+                                "endPlaceholder": "",
+                                "type": "date",
+                                "format": "YYYY-MM-DD",
+                                "timestamp": false,
+                                "required": false,
+                                "requiredMessage": "",
+                                "validatorCheck": false,
+                                "validator": "",
+                                "width": "",
+                                "customClass": "",
+                                "labelWidth": 100,
+                                "isLabelWidth": false,
+                                "hidden": false,
+                                "dataBind": true,
+                                "customProps": {},
+                                "remoteFunc": "func_is8qoyqf",
+                                "remoteOption": "option_is8qoyqf",
+                                "tableColumn": false,
+                                "subform": false
+                            },
+                            "events": {"onChange": "", "onFocus": "", "onBlur": ""},
+                            "name": "DataOfGraduation",
+                            "key": "is8qoyqf",
+                            "model": "date_is8qoyqf",
+                            "rules": []
+                        }],
+                        "config": {
+                            "labelWidth": 100,
+                            "labelPosition": "right",
+                            "size": "large",
+                            "customClass": "",
+                            "ui": "element",
+                            "eventScript": []
+                        }
+                    },
+                    remoteFuncs: {},
+                    dynamicData: {}
+                }
+            },
+            // methods: {
+            //     handleSubmit() {
+            //         this.$refs.generateForm.getData().then(data => {
+            //             // data check success
+            //             // data - form data
+            //             ElMessageBox.alert(data, '表单数据')
+            //         }).catch(e => {
+            //             // data check failed
+            //         })
+            //     }
+            // }
+        }).use(ElementPlus).use(FormMakingV3).mount('#app')
+        const handleSubmit = () => {
+            generateForm.value.getData().then(data => {
+            ElMessageBox.alert(data, '表单数据')
+  })
+}
+    </script>
+</div>
+</body>
+<script type="text/javascript">
+    function onTopClick_HOME() {
+        window.location.href = "/templates/001_Home/index.html";
+    }
+
+    function onTopClick_ASMISSION() {
+        window.location.href = "/static/002_Asmission/index.html";
+    }
+
+    function onTopClick_CAMPUS() {
+        window.location.href = "/static/003_Campuslife/index.html";
+    }
+
+    function onTopClick_RESEARCH() {
+        window.location.href = "/static/004_research/index.html";
+    }
+
+    function onTopClick_ABOUT_DUC() {
+        window.location.href = "/static/005_aboutduc/index.html";
+    }
+
+    function onTopClick_DEGREE() {
+        window.location.href = "/static/006_degree/index.html";
+    }
+</script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+
+</html>
