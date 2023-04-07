@@ -1,0 +1,89 @@
+ubuntu 18 
+root-Nzh278799
+VNC:Nzh278
+=========================================
+
+//安装
+sudo apt-get update
+
+//安装unzip(~下)
+sudo apt install unzip
+
+//安装pip(~下)
+sudo apt-get install python-pip
+
+//安装virtualenv(~下)
+sudo pip install -U virtualenv
+
+//安装python
+sudo apt-get install python（2.7）
+sudo apt-get install python3.7（3.7）
+
+
+//在虚拟环境外使用Python
+使用python2.7 就输入python
+使用python3.7 就输入python3.7
+
+//在虚拟环境内使用Python
+都是 python
+
+//目录：
+根-environment(启动python虚拟环境：source envpy3/bin/activate)
+  -workspace(flask目录Project_noVenv 启动方法：python main.py)
+
+//创建基于python3的名为envpy3的虚拟环境
+virtualenv --system-site-packages -p python3.7 ./envpy3
+
+//开启虚拟环境（environment目录下）
+source envpy3/bin/activate
+
+//利用sftp 连接服务器
+sftp ubuntu@ip
+put 本地文件路径(默认在root的/) 远程主机路径    eg:put .... Workspace
+get 远程文件路径 本地主机路径 
+
+//安装python依赖包
+在 workspace/Project_noVenv下
+pip install -r requirements.txt
+
+//安装mysql(5.7)
+https://developer.aliyun.com/article/1125233?spm=a2c6h.14164896.0.0.e8ad2147vy2IWb
+
+//打开flask后端项目
+/*(workspace/Project_noVenv)python main.py*/
+workspace/Project_noVenv# gunicorn -w 4 -b 0.0.0.0:8000 main:app
+
+//flask高并发部署 flask+nginx+gunicorn
+【https://blog.csdn.net/weixin_38819889/article/details/127976624】
+
+
+//根据端口号查看进程： 
+lsof -i:端口号 
+查看某个进程是否在运行： 
+ps -aux | grep “进程名” 
+杀死指定进程根据pid号： 
+kill pid号 
+强制杀死指定进程根据pid号： 
+kill -9 pid号
+
+//nginx位置
+一. 安装包安装 1.1 安装Nginx $sudo apt-get install nginx Ubuntu安装之后的文件结构大致为: 所有的配置文件都在/etc/nginx下,并且每个虚拟主机已经安排在了/etc/nginx/sites-available下 程序文件在/usr/sbin/nginx 日志放在了/var/log/nginx中 并已经在/etc/init.d/下创建了启动脚本nginx 默认的虚拟主机的目录设置在了/var/www/nginx-default (有的版本 默认的）
+【https://www.bbsmax.com/topic/ubuntu安装nginx的目录在哪里/】
+
+lsof -i:8000
+cd environment && source envpy3/bin/activate 
+cd ../workspace/Project_noVenv  
+gunicorn -w 4 -b 0.0.0.0:8000 main:app
+
+//服务器宝塔面包账号(47.251.40.68)
+hjxvserx
+password: 61020a9d
+
+
+location /dist
+{
+  alias /www/wwwroot/47.102.124.169/dist/;
+  try_files $uri $uri/ /dist/index.html;
+}
+
+
