@@ -427,6 +427,9 @@ def Execl():
             Yeardict.get('addInputArr').append(addinputarrdict)
         elif Yearlist[-1] == Yearacademic:
             Yeardict.get('addInputArr').append(addinputarrdict)
+            if (index - 5 + 1) == len(courseData):
+                listCourse.append(Yeardict)
+                Yearlist.append(Yearacademic)
 
     dict1 = {'name': basedata[1], 'passport': str(basedata[5]), 'gender': basedata[2], 'nationality': basedata[4],
             'DateOfBirth': dateconvert1(basedata[3]),
